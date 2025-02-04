@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Undangan Pernikahan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="overlay"></div>
+
+    <audio id="background-music" autoplay loop>
+        <source src="backsound.mp3" type="audio/mp3" />
+        Your browser does not support the audio element.
+      </audio>
+
+    <div class="container">
+        <h1>Baskara & Rania</h1>
+        <h2>Sabtu, 15 Maret 2025</h2>
+
+        <p class="lead">
+            Dengan penuh rasa syukur dan kebahagiaan, kami mengundang Bapak/Ibu/Saudara/i 
+            untuk menghadiri acara pernikahan kami.
+        </p>
+
+        <h3>Lokasi Acara</h3>
+        <p>ISTORA Senayan, Jl. Pintu Satu Senayan No.1, RT.1/RW.3, Gelora, Kecamatan Tanah Abang, Kota Jakarta Pusat</p>
+
+        <h3>Waktu Acara</h3>
+        <p>Akad Nikah: 10.00 WIB</p>
+        <p>Resepsi: 12.00 - 15.00 WIB</p>
+
+        <h3>Dress Code</h3>
+        <p>Pria: Batik / Kemeja Formal</p>
+        <p>Wanita: Kebaya / Gaun Formal</p>
+
+        <h3>Google Maps</h3>
+        <p><a href="https://maps.app.goo.gl/udCk8eZDgdmTZtZr6" target="_blank" class="btn btn-primary">Lihat Lokasi</a></p>
+
+        <h3>Ucapan & Doa</h3>
+        <p>Silakan tinggalkan ucapan dan doa untuk kami:</p>
+        <textarea class="form-control" rows="3" placeholder="Tulis ucapan di sini..."></textarea>
+        <button class="btn btn-success mt-2">Kirim</button>
+
+        <br><br>
+        <a href="index.html" class="rsvp-btn btn btn-lg">Kembali ke Halaman Utama</a>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const audio = document.getElementById("background-music");
+  
+          // Coba putar musik secara otomatis
+          const playMusic = () => {
+            audio.muted = true;  // Mulai dengan mute (agar diizinkan autoplay)
+            audio.play().then(() => {
+              audio.muted = false; // Setelah berhasil diputar, unmute
+            }).catch(error => {
+              console.log("Autoplay dicegah, menunggu interaksi pengguna.");
+            });
+          };
+  
+          playMusic(); 
+  
+          // Jika autoplay gagal
+          document.addEventListener("click", playMusic, { once: true });
+          document.addEventListener("scroll", playMusic, { once: true });
+          document.addEventListener("touchstart", playMusic, { once: true });
+        });
+      </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Undangan Pernikahan</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="overlay"></div>
+
+    <!-- Audio Element -->
+    <audio id="background-music" autoplay loop>
+      <source src="backsound.mp3" type="audio/mp3" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <div class="container">
+      <h1>Hello, We Are Getting Married</h1><br><br>
+      <h2>Baskara & Rania</h2>
+
+      <h3>Sabtu, 15 Maret 2025</h3>
+
+      <i>Kepada Yth.</i><br>
+      <i>Bapak/Ibu/Saudara/i</i><br><br>
+
+      <a href="isi.html" class="rsvp-btn btn btn-lg">Buka Undangan</a>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const audio = document.getElementById("background-music");
+
+        // Coba putar musik secara otomatis
+        const playMusic = () => {
+          audio.muted = true;  // Mulai dengan mute (agar diizinkan autoplay)
+          audio.play().then(() => {
+            audio.muted = false; // Setelah berhasil diputar, unmute
+          }).catch(error => {
+            console.log("Autoplay dicegah, menunggu interaksi pengguna.");
+          });
+        };
+
+        playMusic(); 
+
+        // Jika autoplay gagal
+        document.addEventListener("click", playMusic, { once: true });
+        document.addEventListener("scroll", playMusic, { once: true });
+        document.addEventListener("touchstart", playMusic, { once: true });
+      });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
